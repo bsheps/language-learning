@@ -127,3 +127,26 @@ array.
     )
     ```
 
+7. Write the matrix to a file, and read a matrix from a file.
+
+    ```
+    List2d toFile := method( fileName,
+        file := File clone open(fileName)
+        self arr foreach(row,
+                row foreach(col,
+                    file write(col asString, " ")
+                )
+                file write("\n")
+            )
+    )
+
+    List2d fromFile := method( fileName,
+        lines := File clone openForReading(fileName) readLines
+        self arr := List clone
+        lines foreach(row,
+            cols := row split
+            self arr append(cols)
+        )
+        self
+    )
+    ```

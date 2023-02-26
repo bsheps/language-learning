@@ -31,6 +31,26 @@ List2d transpose := method(
     new_matrix
 )
 
+List2d toFile := method( fileName,
+    file := File clone open(fileName)
+    self arr foreach(row,
+            row foreach(col,
+                file write(col asString, " ")
+            )
+            file write("\n")
+        )
+)
+
+List2d fromFile := method( fileName,
+    lines := File clone openForReading(fileName) readLines
+    self arr := List clone
+    lines foreach(row,
+        cols := row split
+        self arr append(cols)
+    )
+    self
+)
+
 myList := List2d clone
 
 // initialize
@@ -73,3 +93,16 @@ transposed println
 (transposed get(1,1) == myList get(1,1)) println
 (transposed get(2,0) == myList get(0,2)) println
 (transposed get(2,1) == myList get(1,2)) println
+
+// write to file
+transposed toFile("test.txt")
+
+// read from file
+newList := List2d fromFile("test.txt")
+
+newList get(0,0) println
+newList get(0,1) println
+newList get(1,0) println
+newList get(1,1) println
+newList get(2,0) println
+newList get(2,1) println
