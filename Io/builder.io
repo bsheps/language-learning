@@ -70,3 +70,35 @@ writeln
 Builder empty({"size":"large"})
 writeln
 Builder empty()
+
+/* console output from program, notice attributes on some of the tags
+<ul>
+    <li isDone="true">
+        Io
+    </li>
+    <li>
+        Lua
+    </li>
+    <li>
+        JavaScript
+    </li>
+</ul>
+
+<body>
+    <div>
+        <p>
+            Hello world
+        </p>
+    </div>
+</body>
+
+<book hello="world" author="Bruce Tate">
+    stuff
+</book>
+
+<empty size="large">
+</empty>
+
+<empty>
+</empty>
+*/

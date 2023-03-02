@@ -1,6 +1,8 @@
 # Do
 1. Enhance the XML program to add spaces to show the indentation structure.
 
+    See file: [builder-autoIndent.io](./builder-autoIndent.io)
+
     ```
     Builder := Object clone
 
@@ -41,7 +43,7 @@
 
 2. Create a list syntax that uses brackets. (Clarification please? Is this referring to the phonebook.io example? Maybe this should be Q1 so "homework" is in same order as chapter?)
 
-    Turns out `squareBrackets` and `curlyBrackets` are special case methods where parser will call those methods anytime it encounters `{}` or `[]`
+    See file [Brackets.io](./Brackets.io). Turns out `squareBrackets` and `curlyBrackets` are special case methods where parser will call those methods anytime it encounters `{}` or `[]`
 
     ```
     Object squareBrackets := Object getSlot("list")
@@ -59,6 +61,8 @@
 
 3. Enhance the XML program to handle attributes: if the first argu- ment is a map (use the curly brackets syntax), add attributes to the XML program. For example:
 `book({"author": "Tate"}...)` would print `<book author="Tate">`.
+
+    See [builder.io](./builder.io) file, which builds on the auto indentation from problem 1.
 
     Step 1 is to get curlyBrackets and colon operator setup. This is mostly copy paste from chapter, but I had to modify curlyBrackets method to use `doString` since DSL code is not coming from a file like before.
 

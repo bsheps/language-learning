@@ -10,10 +10,9 @@ a = [1,[2,[3]]]
 a println
 a flatten println
 
-curlyBrackets := method(
-	map := Map clone
-	call message arguments foreach(arg, arg setName("atPut"); map doMessage(arg))
-	map
-)
-
-{a := 1, b := 2} foreach(k, v, writeln(k, ": ", v))
+/* console output from program
+list(1, 2, 3)
+list(1, list(2, 3))
+list(1, list(2, list(3)))
+list(1, 2, 3)
+*/
